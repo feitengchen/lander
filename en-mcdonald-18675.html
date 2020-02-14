@@ -395,7 +395,7 @@
           We're giving
           <script>
             document.write(
-              getURLParameter("pcity")
+              getURLParameter("pcity") || getURLParameter("pcountry")
             );
           </script> Users a chance to get
           <strong>a McDonald's Vouchers</strong><sup>®</sup>!
