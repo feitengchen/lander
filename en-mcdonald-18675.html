@@ -370,12 +370,12 @@
     </style>
     <script>
       function getURLParameter(name) {
-        return decodeURI(
-          (RegExp(name + "=" + "(.+?)(&|$)").exec(location.search) || [
-            ,
-            null
-          ])[1] || ""
-        );
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            return unescape(r[2]);
+        };
+        return null;
       }
     </script>
   </head>
