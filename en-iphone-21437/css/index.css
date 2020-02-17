@@ -27,7 +27,7 @@ a.claim{color:rgb(255, 255, 255);text-decoration:none;}
 .clr{clear:both;}
 .comment-status{color:#9197a8;font-size:11px;cursor:pointer;}
 .comment-status span{color:rgb(59, 89, 152);}
-#a-nav{height:48px;background:#000000;}
+#a-nav{min-height:48px;background:#000000;}
 #a-nav .icon-nav, #a-nav .icon-basket, #a-nav .icon-apple{position:absolute;width:48px;height:48px;background:none no-repeat scroll center center transparent;}
 #a-nav .icon-nav:before{position:absolute;background:url(fb-left.png) no-repeat center center;border-radius:2px 2px 2px 2px;height:26px;width:25px;left:14px;content:"";top:9px;}
 #a-nav .icon-nav:after{bottom:19px;}

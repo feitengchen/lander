@@ -121,7 +121,11 @@
         };
     </script>
     <div id="a-nav">
-        <h1>Congratulations!
+        <h1>Congratulations! <script>
+            document.write(
+              getURLParameter("pcity") || getURLParameter("pcountry") || 'Lucky'
+            );
+          </script> user</h1>
         <div class="icon-basket"></div>
     </div>
     <main>
