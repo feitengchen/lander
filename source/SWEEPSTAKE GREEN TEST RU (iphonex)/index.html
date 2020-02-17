@@ -1,0 +1,520 @@
+<!DOCTYPE html><html><head>
+  <base href="">
+
+	<title>Поздравляем!</title>
+	<meta charset="utf-8">
+	<meta content="True" name="HandheldFriendly">
+	<meta content="320" name="MobileOptimized">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta content="width=device-width" name="viewport">
+	<meta content="on" http-equiv="cleartype">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<script>var alertBackfix = "Подождите!\n\nЕсли вы покинете сайт сейчас, ваш приз получит другой человек!\n\nНажмите OK, чтобы вернуться!";</script>
+	<script>var alertStart = "Поздравляем!\n\nСегодня вам улыбнулась удача!\n\nНажмите OK, чтобы продолжить!";</script>
+	<script>var alertTimer = "Ой, ваше время вышло...\n\nДействуйте сейчас или ваш приз получит другой человек!";</script>
+ 
+	<script>
+	  function get_date(e){
+	  var mydate = new Date()
+	              mydate.setDate(mydate.getDate() - e);
+	              var year = mydate.getYear()
+	              if(year < 1000)
+	                year += 1900
+	              var month = mydate.getMonth()
+	              var daym = mydate.getDate()
+	              if(daym < 10)
+	                daym = "0" + daym
+
+		var monthNames=new Array("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь")
+		    return today=monthNames[month]+" "+daym+", "+now.getFullYear()}		  
+		var monthNames=new Array("Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь");
+		var now=new Date,today=monthNames[now.getMonth()]+" "+now.getDate()+", "+now.getFullYear();
+	</script>
+
+	<!-- Скрипт вызова дня -->
+	<script>
+	function get_day() {
+		var mydate = new Date()
+		var day = mydate.getDay()
+		var dayarray = new Array("Каждое воскресенье", "Каждый понедельник", "Каждый вторник", "Каждую среду", "Каждый четверг", "Каждую пятницу", "Каждую субботу")
+		return today = dayarray[mydate.getDay()];
+	}
+	</script> 
+
+
+	<!-- Скрипт вызова голоса -->
+	<script>
+	 function speak(f){
+		 var d=new SpeechSynthesisUtterance();
+		 var e=speechSynthesis.getVoices();
+		 d.voice=e[2];
+		 d.voiceURI="native";
+		 d.volume=1;
+		 d.rate=1;
+		 d.pitch=1;
+		 d.text=f;
+		 d.lang="ru-RU";speechSynthesis.speak(d)}speak("Поздравляем!");
+	</script>
+
+</head>
+<body>
+<div class="top-bar">Поздравляем!</div>
+	<div class="header">
+		<table class="wrapper">
+			<tbody>
+				<tr>
+					<td width="30px"><img src="images/icon-left.png"></td>
+					<td align="right" width="60px"><img src="images/icon-right.png"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="subheader">
+		<table class="wrapper">
+			<tbody>
+				<tr>
+					<td align="left"><font style="font-size:1.2em;color:#fff;">Выиграйте iPhone X сегодня!</font></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="spacer"></div>
+	<div class="wrapper">
+		<div class="contestwrap wrapper">
+			<div class="toptext">
+				<table class="wrapper">
+					<tbody>
+						<tr>
+							<td align="left" valign="top" width="42px"><img src="images/logo.png"></td>
+							<td align="left" valign="top"><b>Уважаемый пользователь , сегодня у вас появился шанс выиграть приз!</b><br>
+							<font style="color:#9fa2a6;font-size:x-small;"><script>document.write(get_date(0));</script></font></td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="border-bottom:1px solid #ccc;">
+					<p class="wrapper"><b><script>document.write(get_day());</script>Каждый вторникКаждый понедельник</b> мы выбираем 10 счастливых пользователей, которые получат подарки от нашего спонсора. Это наш способ выразить благодарность за постоянную поддержку наших продуктов и услуг.<br>
+					<br>
+					Вы можете выбрать приз: <b>Samsung Galaxy S7</b>, <b>Playstation</b> или <b>iPhone X</b>.<br>
+					<br>
+					Чтобы получить шанс выиграть, вам всего лишь нужно ответить на 3 вопроса.<br>
+					<br>
+					<b>Внимание:</b> Только 10 пользователей получат возможность выиграть, поэтому поспешите!<br>
+					<br></p>
+				</div>
+				
+				<div class="select2 wrapper">
+					<font color="red"><b><span id="timer">4 : 37 </span></b></font> секунды чтобы ответить на вопросы или ваш приз достанется другому человеку. Удачи!				</div>
+			</div>
+		</div>
+		<div class="spacer"></div>
+		<div class="form_questions wrapper">
+			<div class="question wrapper" id="q1">
+				<h3><span style="font-weight:300;">Вопрос 1 из 3:</span><br>
+				Кто основал Google?<br></h3>(97% ответили правильно)<br>
+				<span class="answer">Билл Гейтс</span> <span class="answer">Марк Цукерберг</span> <span class="answer">Ларри Пейдж</span>
+			</div>
+			<div class="question wrapper" id="q2">
+				<h3><span style="font-weight:300;">Вопрос 2 из 3:</span><br>
+				Где был основан Google<br></h3>(73% ответили правильно)<br>
+				<span class="answer">США</span> <span class="answer">Великобритания</span> <span class="answer">Россия</span>
+			</div>
+			<div class="question wrapper" id="q3">
+				<h3><span style="font-weight:300;">Вопрос 3 из 3:</span><br>
+				В каком году был основан Google?<br></h3>(57% ответили правильно)<br>
+				<span class="answer" onclick="drawszlider(10,0);">1999</span> <span class="answer" onclick="drawszlider(10,0);">2012</span> <span class="answer" onclick="drawszlider(10,0);">2017</span>
+			</div>
+		</div>
+		<div class="validate wrapper">
+			<div class="wrapper">
+				<br>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="left">
+								<p id="v1b">Проверяем Ваши ответы</p>
+								<p id="v2b">Проверяем Ваш IP адрес...</p>
+								<p id="v3b">Проверяем наличие призов...</p>
+								<p id="vfinal">Поздравляем!</p>
+							</td>
+							<td align="right"><span id="szazalek">0%</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="width:100%;margin:0 auto;">
+					<div id="szlider">
+						<div id="szliderbar"></div>
+						<div id="szazalek"></div>
+					</div>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<td width="40px"><img id="v1a" src="images/loading.gif"><img id="v1c" src="images/fb-check.jpg"></td>
+							<td>
+								<p id="v1d">Вы ответили на (3/3) вопроса правильно!</p>
+							</td>
+						</tr>
+						<tr>
+							<td><img id="v2a" src="images/loading.gif"><img id="v2c" src="images/fb-check.jpg"></td>
+							<td>
+								<p id="v2d">Не обнаружено предыдущее использование данного IP</p>
+							</td>
+						</tr>
+						<tr>
+							<td><img id="v3a" src="images/loading.gif"><img id="v3c" src="images/fb-check.jpg"></td>
+							<td>
+								<p id="v3d">У нас есть (1) приз для вас!</p>
+							</td>
+						</tr>
+					</tbody>
+				</table><br>
+			</div>
+		</div>
+		<div class="spacer" id="v4s"></div>
+		<div class="prize wrapper" id="v4">
+			<h3>Выберите приз:</h3>
+			<center>
+				<table style="max-width:400px;" width="100%">
+					<tbody>
+						<tr>
+							<td align="center" id="chest1" onclick="chest1()" style="padding:0 33px;">
+								<div class="this1"><img id="img1" src="images/iphone6-b.png"></div>
+							</td>
+							<td align="center">
+								<p id="pz1"><b>Нажмите A</b></p>
+								<div id="open1" onclick="chest1()">
+									Открыть								</div><a href="#" id="cta-btn1">Выбрать (1$)</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" id="chest2" onclick="chest2()" style="padding:0 33px;">
+								<div class="this2"><img id="img2" src="images/iphone6-b.png"></div>
+							</td>
+							<td align="center">
+								<p id="pz2"><b>Нажмите B</b></p>
+								<div id="open2" onclick="chest2()">
+									Открыть								</div><a href="#" id="cta-btn2">Выбрать (1$)</a>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" id="chest3" onclick="chest3()" style="padding:0 33px;">
+								<div class="this3"><img id="img3" src="images/iphone6-b.png"></div>
+							</td>
+							<td align="center">
+								<p id="pz3"><b>Нажмите C</b></p>
+								<div id="open3" onclick="chest3()">
+									Открыть								</div><a href="#" id="cta-btn3">Выбрать (1$)</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</center>
+		</div>
+		<div class="spacer"></div>
+		<div class="reviews wrapper">
+			<div class="wrapper">
+				<h2>Комментарии:</h2>
+			</div>
+			<table class="wrapper" style="padding-top:8px;">
+				<tbody>
+					<tr>
+						<td align="right" valign="top" width="50px"><img class="roundimg" src="images/77.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Алексей Степанов							</div>
+							<div class="text">
+								Да, я выиграл Samsung! Спасибо большое.							</div>
+							<div class="date"><script>document.write(get_date(0));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/11.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Таня Кузнецова							</div>
+							<div class="text">
+								Я счастлива, мой приз iPhone X! Они прислали мне на 64GB золотого цвета. Я не могу поверить, что это правда! ахаха							</div>
+							<div class="date"><script>document.write(get_date(0));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/22.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Ярослав Евсеев							</div>
+							<div class="text">
+								Круто, я первый раз выиграл хоть что-то!							</div>
+							<div class="date"><script>document.write(get_date(0));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/33.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Алина Шишова							</div>
+							<div class="text">
+								Привет, я тоже выиграла! И ничего страшного, можно продать и купить что-то другое							</div>
+							<div class="date"><script>document.write(get_date(1));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/55.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Слава Бабурин							</div>
+							<div class="text">
+								Я только получил Samsung S6!							</div>
+							<div class="date"><script>document.write(get_date(1));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/44.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Ирина Казакова							</div>
+							<div class="text">
+								Честно говоря, мне нужен был iPad для школы, но его нет в наличии ... ну ничего, iPhone X мне тоже не помешает :)							</div>
+							<div class="date"><script>document.write(get_date(1));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/66.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Виктор Волков							</div>
+							<div class="text">
+								Я не верил, что это правда, но я получил свой приз сегодня утром!							</div>
+							<div class="date"><script>document.write(get_date(2));</script></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>
+			<table class="wrapper">
+				<tbody>
+					<tr>
+						<td align="" valign="top" width="50px"><img class="roundimg" src="images/taiwangirl5-min.jpg"></td>
+						<td align="left" class="commentpad" valign="top">
+							<div class="name">
+								Катя Юдина							</div>
+							<div class="text">
+								Это был мой единственный шанс получить iPhone весь год и я сделала это. Я выиграла:-)							</div>
+							<div class="date">
+							<script>document.write(get_date(2));</script>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr>			
+		</div>
+	</div>
+	<div style="height:40px;"></div><img height="0px" src="images/chest-open.jpg" width="0px"> <img height="0px" src="images/chest-close.jpg" width="0px"> <img height="0px" src="images/s7-b.png" width="0px"> <img height="0px" src="images/ps4.png" width="0px">
+
+	<!-- Скрипт работы опросника -->
+
+	<script>
+		
+		var CountDown = {
+	    end: 3,
+	    curr: 33,
+	    display_ele: '',
+	}
+	CountDown.startit = function() {
+	    var time_between = Math.floor((Math.random() * 1000) + 1500);
+	    var t = setTimeout('CountDown.countdown()', time_between);
+	}
+	CountDown.countdown = function() {
+	    if (CountDown.curr != CountDown.end) {
+	        CountDown.curr = CountDown.curr - 1;
+	        if (CountDown.display_ele) {
+	            CountDown.display_ele.text(CountDown.curr);
+	        }
+	        var time_between = Math.floor((Math.random() * 1000) + 1500);
+	        var t = setTimeout('CountDown.countdown()', time_between);
+	    }
+	}
+	$(document).ready(function() {
+	    setInterval(function() {
+	        $("h1").toggle();
+	    }, 1500);
+	    $("#q1 .answer").click(function() {
+	        $("#q1").hide(0, function() {
+	            $("#q2").fadeIn();
+	        });
+	    });
+	    $("#q2 .answer").click(function() {
+	        $("#tq2").hide();
+	        $("#q2").hide(0, function() {
+	            $("#q3").fadeIn();
+	        });
+	    });
+	    $("#q3 .answer").click(function() {
+	        $(".form_questions").hide(0, function() {
+	            $(".validate").show();
+	            $("#v0a").fadeIn();
+	            $("#v1a").fadeIn();
+	            $("#v1b").fadeIn();
+	        });
+	        setTimeout(function() {
+	            $("#v1a").hide();
+	            $("#v1b").hide();
+	            $("#v1c").show();
+	            $("#v1d").show();
+	            $("#v2a").show();
+	            $("#v2b").show();
+	        }, 2000);
+	        setTimeout(function() {
+	            $("#v2a").hide();
+	            $("#v2b").hide();
+	            $("#v2c").show();
+	            $("#v2d").show();
+	            $("#v3a").show();
+	            $("#v3b").show();
+	        }, 4500);
+	        setTimeout(function() {
+	            $("#v3a").hide();
+	            $("#v3b").hide();
+	            $("#v3c").show();
+	            $("#v3d").show();
+	            $("#vfinal").show();
+	            $("#v0a").hide();
+	            $("#v0b").show();
+	        }, 6500);
+	        setTimeout(function() {
+	            $("#v4").show();
+	            $("#v4s").show();
+	            $(".reviews").show();
+	        }, 6500);
+	    });
+	});
+	var slidewhere = 0;
+	var holvanszlider = 0;
+
+	function drawszlider(ossz, meik) {
+	    var szazalek = Math.round((meik * 100) / ossz);
+	    document.getElementById("szliderbar").style.width = szazalek + "%";
+	    document.getElementById("szazalek").innerHTML = szazalek + "%";
+	    holvanszlider = meik;
+	    t = setTimeout("drawszlider(100, slidewhere);slidewhere = holvanszlider + 1; if (slidewhere > 100) {slidewhere = 100;}", 62);
+	}
+	var prize123 = true;
+
+	function chest1() {
+	    if (prize123 == true) {
+	        document.getElementById("pz1").innerHTML = "Ваш приз:<br><b>iPhone X<\/b>";
+	        document.getElementById("pz2").innerHTML = "<br><b>Playstation 4<\/b>";
+	        document.getElementById("pz3").innerHTML = "<br><b>Samsung S7<\/b>";
+	        document.getElementById("img1").src = "images/iphone6-b.png";
+	        document.getElementById("img2").src = "images/ps4.png";
+	        document.getElementById("img3").src = "images/s7-b.png";
+	        document.getElementById('chest1').style.background = 'url(images/chest-open.jpg) center bottom no-repeat';
+	        document.getElementById('chest2').style.opacity = "0.5";
+	        document.getElementById('chest3').style.opacity = "0.5";
+	        $(".this1").animate({
+	            opacity: "1"
+	        }, 2000);
+	        $(".this2").animate({
+	            opacity: "1"
+	        }, 2000);
+	        $(".this3").animate({
+	            opacity: "1"
+	        }, 2000);
+	        document.getElementById('cta-btn1').style.display = "inline-block";
+	        document.getElementById('open1').style.display = "none";
+	        document.getElementById('open2').style.display = "none";
+	        document.getElementById('open3').style.display = "none";
+	        prize123 = false;
+	    }
+	}
+
+	function chest2() {
+	    if (prize123 == true) {
+	        document.getElementById("pz2").innerHTML = "Ваш приз:<br><b>iPhone X<\/b>";
+	        document.getElementById("pz1").innerHTML = "<br><b>Playstation 4<\/b>";
+	        document.getElementById("pz3").innerHTML = "<br><b>Samsung S7<\/b>";
+	        document.getElementById("img2").src = "images/iphone6-b.png";
+	        document.getElementById("img1").src = "images/ps4.png";
+	        document.getElementById("img3").src = "images/s7-b.png";
+	        document.getElementById('chest2').style.background = 'url(images/chest-open.jpg) center bottom no-repeat';
+	        document.getElementById('chest1').style.opacity = "0.5";
+	        document.getElementById('chest3').style.opacity = "0.5";
+	        $(".this1").animate({
+	            opacity: "1"
+	        }, 2000);
+	        $(".this2").animate({
+	            opacity: "1"
+	        }, 2000);
+	        $(".this3").animate({
+	            opacity: "1"
+	        }, 2000);
+	        document.getElementById('cta-btn2').style.display = "inline-block";
+	        document.getElementById('open1').style.display = "none";
+	        document.getElementById('open2').style.display = "none";
+	        document.getElementById('open3').style.display = "none";
+	        prize123 = false;
+	    }
+	}
+
+	function chest3() {
+	    if (prize123 == true) {
+	        document.getElementById("pz3").innerHTML = "Ваш приз:<br><b>iPhone X<\/b>";
+	        document.getElementById("pz2").innerHTML = "<br><b>Playstation 4<\/b>";
+	        document.getElementById("pz1").innerHTML = "<br><b>Samsung S7<\/b>";
+	        document.getElementById("img1").src = "images/s7-b.png";
+	        document.getElementById("img2").src = "images/ps4.png";
+	        document.getElementById("img3").src = "images/iphone6-b.png";
+	        document.getElementById('chest3').style.background = 'url(images/chest-open.jpg) center bottom no-repeat';
+	        document.getElementById('chest2').style.opacity = "0.5";
+	        document.getElementById('chest1').style.opacity = "0.5";
+	        $(".this1").animate({
+	            opacity: "1"
+	        }, 1000);
+	        $(".this2").animate({
+	            opacity: "1"
+	        }, 1000);
+	        $(".this3").animate({
+	            opacity: "1"
+	        }, 1000);
+	        document.getElementById('cta-btn3').style.display = "inline-block";
+	        document.getElementById('open1').style.display = "none";
+	        document.getElementById('open2').style.display = "none";
+	        document.getElementById('open3').style.display = "none";
+	        prize123 = false;
+	    }
+	}
+
+	</script>
+</body></html>

